@@ -10,6 +10,7 @@ const publicDirectoryPath = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'./templates/views')
 const partialPath=path.join(__dirname,'./templates/partial' )
 
+const port = process.env.PORT || 3600
 const app = express()
 app.set('view engine', 'hbs')
 app.set('views', viewPath)
@@ -17,8 +18,8 @@ app.use(express.static(publicDirectoryPath))
 
 hbs.registerPartials(partialPath)
 
-app.listen(3600,()=>{
-    console.log('Server is up on port 3600')
+app.listen(port,()=>{
+    console.log('Server is up on port'+port)
 })
 
 
